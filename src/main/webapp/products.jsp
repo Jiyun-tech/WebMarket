@@ -24,23 +24,57 @@
 	</head>
 	<body>
 	
-		<!-- 메뉴바 action tag로 연결-->
-		<jsp.include page="menu.jsp" > 
+		<!-- 메뉴바 action tag로 연결 (/슬래쉬로 닫는 것 잊지 말기!)-->
+		<jsp:include page="menu.jsp"/> 
 		
+		<!-- 상단 ==> " 상품 목록 "-->
+		<!-- Bootstrap v.5부터 jumbotron 지원 중단 -->
+		<!-- p-5 : 사방으로 전체 패딩(5:많이, 3:보통) -->
+		<!-- bg-primary : 배경 기본 색상 -->
+		<!-- text-white : 글자 색상 하얗게 -->
+		<div class="p-5 bg-primary text-white">
+			<!-- container : 좌우 가운데 정렬 -->
+	    	<div class="container">
+	    		<!-- display-3 : 큰 글자 중 글자 크기 (3 : 보통)-->
+	       		<h1 class="display-3">
+	       			<!-- 표현문 (출력)용 스트립트 태그 -->
+	       			상품 목록
+	       		</h1>
+	    	</div>
+		</div>
+			
 		<%
 		// useBeans 같은 기능 ==> ProductRepository repository = new ProductRepository();
 		// 단, 자바빈즈 액션 태그 사용하여 useBean 하지 않고 객체를 생성하게 되면, 
 		// 실행 시마다 메모리에 새로 객체를 만들게 되므로, 액션 태그사용하는(한 번 생성하고 재활용) 쪽이 효율적임.
 		List<Product> products = repository.getAllProducts();
-		for(Product product: products) {
-			out.println(product + "<br><br>");
-			// println 안에 원래 toString() 써야 하나, toString()이 Product.java 파일 안에 정의되어 있으므로 생략
-			// Run ==> 생성한 3개 product 정보가 출력됨
-		}
+		//for(Product product: products) {
+			//out.println(product + "<br><br>");
+			//// println 안에 원래 toString() 써야 하나, toString()이 Product.java 파일 안에 정의되어 있으므로 생략
+			//// Run ==> 생성한 3개 product 정보가 출력됨
+		//}
 		%>
 		
+		<div class="container">
+			<!-- 글자 가운데 정렬 -->
+		    <div class="row text-center">
+		    	<%
+		    	for (Product product : products) {
+		    	%>
+   			    	<!-- md : medium size device -->
+   			  		<div class="col-md-4">
+   			  			<h3><%= product.getName()%></h3>
+   			  			<p><%= product.getDescription()%></p>
+   			  			<p><%= product.getUnitPrice()%>원</p>
+   			  		</div> 
+		    	<%	
+		    	}
+		    	%>
+		    </div>
+		</div>
+				
 		<!-- footer(하단) action tag로 연결-->
-		<jsp.include page="footer.jsp" >
+		<jsp:include page="footer.jsp"/>
 	
 	</body>
 </html>

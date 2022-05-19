@@ -14,7 +14,7 @@
 <body>
 
 	<!-- jsp action tag 사용하여 메뉴바(Home 버튼) 부분으로 연결 -->
-	<jsp.include page="menu.jsp" >
+	<jsp:include page="menu.jsp" />
 	
 	<!-- 스크립트 태그 3종
 		(1) 선언문 (!) : 자바 변수,메소드 정의 시 사용
@@ -71,7 +71,7 @@
 	</div>
 	
 	<!-- footer(하단) 부분 jsp action tag로 연결  -->
-	<jsp.include class="footer.jsp">
+	<jsp:include page="footer.jsp"/>
 	
 </body>
 </html>
