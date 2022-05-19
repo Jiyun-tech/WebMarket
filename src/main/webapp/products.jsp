@@ -10,8 +10,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="EUC-KR">
-		<title>Insert title here</title>
+		<meta charset="UTF-8">
+		<title>products.jsp</title>
 	</head>
 	<body>
 		<%
@@ -20,6 +20,7 @@
 		for(Product product: products) {
 			out.println(product + "<br><br>");
 			// println 안에 원래 toString() 써야 하나, toString()이 Product.java 파일 안에 정의되어 있으므로 생략
+			// Run ==> 생성한 3개 product 정보가 출력됨
 		}
 		%>
 	
