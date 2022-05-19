@@ -7,6 +7,7 @@
 	        <li class="navbar-header">
 	        	<!-- Home 클릭 시 연결될 url 지정 (welcome page)-->
 	        	<a class="navbar-brand" href="./welcome.jsp">Home</a>
+	        	<!-- Products 클릭 시 연결될 url 지정 (products(상품 리스트) page)-->	        	
 	        	<a class="navbar-brand" href="./products.jsp">Products</a>
 	        </li>
 	    </ul>

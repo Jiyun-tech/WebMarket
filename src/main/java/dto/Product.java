@@ -5,6 +5,7 @@ import java.io.Serializable; // import "Serializable" 메서드
 
 // 모델 클래스
 // JSP : 자바빈즈 (getter/setter, 기본 생성자 필수, Serializable 구현 필수)
+// 단, 5/19 수업분까지는 implements Serializable 하지 않아도 기능에 문제 없음! (5/20에 배울 예정)
 public class Product implements Serializable {
 
 	// Add generated serial version ID
@@ -20,17 +21,17 @@ public class Product implements Serializable {
 	private long unitInStock;
 	private String condition;
 	
-	Product() {} // 기본 생성자 만들어놓기 (다른 생성자 생성하므로, 기본 생성자 만들어야 함)
+	Product() {}	// 기본 생성자 만들어놓기 (다른 생성자 생성하므로, 기본 생성자 만들어야 함)
+				 	// 5/19 수업분 까지는 아직 없어도 괜찮음! 5/20에 꼭 필요한 이유와 상황 배울 예정.
 
-	
 	// 생성자 만들기 (Source > Generate Constructor using Fields..)
+	// <jsp:useBean> Action Tag에서 Parameter 사용 시 사용할 예정...(5/20 수업 예정)
 	public Product(String productId, String name, int unitPrice) {
 		super();
 		this.productId = productId;
 		this.name = name;
 		this.unitPrice = unitPrice;
 	}
-
 
 
 	// generate getters & setters

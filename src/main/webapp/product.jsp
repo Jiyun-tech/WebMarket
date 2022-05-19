@@ -1,4 +1,4 @@
-<!-- 상품 클릭 시, 상세 정보 페이지로 넘어가는 기능 -->
+<!-- 상품 클릭 시, 상세 정보 페이지로 넘어가는 기능 구현 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
@@ -54,12 +54,12 @@
    			  			<p> <b>제조사</b> : <%=product.getManufacturer()%></p>
    			  			<p> <b>분류</b> : <%=product.getCategory() %></p>
    			  			<p> <b>재고 수</b> : <%=product.getUnitInStock() %></p>
-   			  			<!-- p.174 코드 추가하기 -->
    			  			
    			  			<p>
    			  				<a href="#" class="btn btn-info"> 상품 주문 &raquo;</a>
-							<!-- # : 현재 페이지를 의미함!-->
+							<!-- 상품 주문 버튼 추가 // # : 현재 페이지를 의미함!-->
 							<a href="./products.jsp" class="btn btn-secondary"> 상품 목록 &raquo;</a>
+							<!-- 상품 목록 버튼 추가 -->
 						</p>
 
    			  		</div> 
