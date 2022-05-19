@@ -50,7 +50,8 @@
 		// 단, 자바빈즈 액션 태그 사용하여 useBean 하지 않고 객체를 생성하게 되면, 
 		// 실행 시마다 메모리에 새로 객체를 만들게 되므로, 액션 태그사용하는(한 번 생성하고 재활용) 쪽이 효율적임.
 		List<Product> products = repository.getAllProducts();
-		//for(Product product: products) {
+		// *참고) 상품 정보 확인하기 위한 테스트 기능
+		// for(Product product: products) {
 			//out.println(product + "<br><br>");
 			//// println 안에 원래 toString() 써야 하나, toString()이 Product.java 파일 안에 정의되어 있으므로 생략
 			//// Run ==> 생성한 3개 product 정보가 출력됨
@@ -65,7 +66,7 @@
 		    	for (Product product : products) {
 		    	%>
    			    	<!-- md : medium size device -->
-   			    	<!-- ProductRepository.java 클래스에 있는 저보 불러오기 -->
+   			    	<!-- ProductRepository.java 클래스에 있는 정보 불러오기 -->
    			  		<div class="col-md-4">
    			  			<h3><%= product.getName()%></h3>
    			  			<p><%= product.getDescription()%></p>
