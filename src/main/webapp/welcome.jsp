@@ -12,17 +12,9 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-	<!-- 상단 -->
-	<!-- nav (navigator) ==> div와 같은 기능 -->
-	<!-- Bootstrap 기능 사용하여 꾸미기 -->
- 	<nav class="navbar navbar-expand navbar-dark bg-dark">
-	    <ul class="container">
-	        <li class="navbar-header">
-	        	<!-- Home 클릭 시 연결될 url 지정 -->
-	        	<a class="navbar-brand" href="./welcome.jsp">Home</a>
-	        </li>
-	    </ul>
-	</nav>
+
+	<!-- jsp action tag 사용하여 메뉴바(Home 버튼) 부분으로 연결 -->
+	<jsp.include page="menu.jsp" >
 	
 	<!-- 스크립트 태그 3종
 		(1) 선언문 (!) : 자바 변수,메소드 정의 시 사용
@@ -78,11 +70,8 @@
 	    </div>
 	</div>
 	
-	<!-- footer: 하단에 사용하는 div -->
-	<footer class="container">
-		<!-- &copy; ==> copyright 문구로 추가됨 -->
-		<p>&copy; WebMarekt</p>
-	</footer>
+	<!-- footer(하단) 부분 jsp action tag로 연결  -->
+	<jsp.include class="footer.jsp">
 	
 </body>
 </html>
