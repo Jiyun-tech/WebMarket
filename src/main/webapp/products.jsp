@@ -4,14 +4,14 @@
 <%@ page import="java.util.List" %> <%-- List 사용 위해 Class import --%>
 <%@ page import="dto.Product" %> 	<%-- dto.Product Class List 메서드 import --%>
 
-<jsp:useBean id="repository" class="dao.ProductRepository" scope="session" />
+<jsp:useBean id="repository" class="dao.ProductRepository" scope="session"/>
 <%-- 자바빈즈 액션태그 ==> 
 	 클래스(dao.ProductsRepository)를 id(repository") 이름으로 끌고 와서 쓰겠다는 의미 --%>
-<%-- scope: 얼마만큼 살아있어야 하는지 범위를 지정. 
-	 ==> 종류 : application, session 등..
-	 ==> session: 서버(e.g. tomcat) 측에 저장하는 것 (클라이언트 x 서버 o)
-	 			  서버에 객체 저장하고, 재활용함(새로고침, 페이지 이동 등 해도 재사용 가능!). 
-				  매 실행 시마다 객체를 재생성하지 않음. --%>
+<%-- scope: 얼마만큼 살아있어야 하는지 범위를 지정. --%>
+<%--	 ==> 종류 : application, session 등.. --%>
+<%--	 ==> session: 서버(e.g. tomcat) 측에 저장하는 것 (클라이언트 x 서버 o) --%>
+<%--	 			  서버에 객체 저장하고, 재활용함(새로고침, 페이지 이동 등 해도 재사용 가능!) --%>
+<%--				  매 실행 시마다 객체를 재생성하지 않음. --%>
 
 <!DOCTYPE html>
 <html>
@@ -59,9 +59,11 @@
 			<!-- 글자 가운데 정렬 -->
 		    <div class="row text-center">
 		    	<%
+		    	// loop
 		    	for (Product product : products) {
 		    	%>
    			    	<!-- md : medium size device -->
+   			    	<!-- ProductRepository.java 클래스에 있는 저보 불러오기 -->
    			  		<div class="col-md-4">
    			  			<h3><%= product.getName()%></h3>
    			  			<p><%= product.getDescription()%></p>
