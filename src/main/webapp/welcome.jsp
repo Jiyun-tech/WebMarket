@@ -1,86 +1,86 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<%@ page import="java.util.Date" %> 			<!-- »ç¿ëÇÒ Class importÇÏ±â -->
-<%@ page import="java.text.SimpleDateFormat" %> <!-- »ç¿ëÇÒ Class importÇÏ±â -->
+    pageEncoding="UTF-8"%>
+<%@ page import="java.util.Date" %> 			<!-- ì‚¬ìš©í•  Class importí•˜ê¸° -->
+<%@ page import="java.text.SimpleDateFormat" %> <!-- ì‚¬ìš©í•  Class importí•˜ê¸° -->
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="EUC-KR">
 	<title>Welcome</title>
-	<!-- Bootstrap CDS °¡Á®¿À±â (2°¡Áö) ==> Âü°í : w3school.com -->
+	<!-- Bootstrap CDS ê°€ì ¸ì˜¤ê¸° (2ê°€ì§€) ==> ì°¸ê³  : w3school.com -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-	<!-- »ó´Ü -->
-	<!-- nav (navigator) ==> div¿Í °°Àº ±â´É -->
-	<!-- Bootstrap ±â´É »ç¿ëÇÏ¿© ²Ù¹Ì±â -->
+	<!-- ìƒë‹¨ -->
+	<!-- nav (navigator) ==> divì™€ ê°™ì€ ê¸°ëŠ¥ -->
+	<!-- Bootstrap ê¸°ëŠ¥ ì‚¬ìš©í•˜ì—¬ ê¾¸ë¯¸ê¸° -->
  	<nav class="navbar navbar-expand navbar-dark bg-dark">
 	    <ul class="container">
 	        <li class="navbar-header">
-	        	<!-- Home Å¬¸¯ ½Ã ¿¬°áµÉ url ÁöÁ¤ -->
+	        	<!-- Home í´ë¦­ ì‹œ ì—°ê²°ë  url ì§€ì • -->
 	        	<a class="navbar-brand" href="./welcome.jsp">Home</a>
 	        </li>
 	    </ul>
 	</nav>
 	
-	<!-- ½ºÅ©¸³Æ® ÅÂ±× 3Á¾
-		(1) ¼±¾ð¹® (!) : ÀÚ¹Ù º¯¼ö,¸Þ¼Òµå Á¤ÀÇ ½Ã »ç¿ë
-		(2) ½ºÅ©¸³Æ²¸´ : ÀÚ¹Ù ·ÎÁ÷ ÄÚµå ÀÛ¼º ½Ã »ç¿ë
-		(3) Ç¥Çö¹® (=): º¯¼ö, °è»ê½Ä, ¸Þ¼Òµå È£Ãâ °á°ú¸¦ ¹®ÀÚ¿­ ÇüÅÂ·Î Ãâ·Â(print) -->
+	<!-- ìŠ¤í¬ë¦½íŠ¸ íƒœê·¸ 3ì¢…
+		(1) ì„ ì–¸ë¬¸ (!) : ìžë°” ë³€ìˆ˜,ë©”ì†Œë“œ ì •ì˜ ì‹œ ì‚¬ìš©
+		(2) ìŠ¤í¬ë¦½í‹€ë¦¿ : ìžë°” ë¡œì§ ì½”ë“œ ìž‘ì„± ì‹œ ì‚¬ìš©
+		(3) í‘œí˜„ë¬¸ (=): ë³€ìˆ˜, ê³„ì‚°ì‹, ë©”ì†Œë“œ í˜¸ì¶œ ê²°ê³¼ë¥¼ ë¬¸ìžì—´ í˜•íƒœë¡œ ì¶œë ¥(print) -->
 	
 	<%! 
-	// º¯¼ö, ¸Þ¼­µå ¼±¾ð
-	String greeting = "À¥ ¼îÇÎ¸ô¿¡ ¿À½Å °ÍÀ» È¯¿µÇÕ´Ï´Ù";
+	// ë³€ìˆ˜, ë©”ì„œë“œ ì„ ì–¸
+	String greeting = "ì›¹ ì‡¼í•‘ëª°ì— ì˜¤ì‹  ê²ƒì„ í™˜ì˜í•©ë‹ˆë‹¤";
 	String tagline = "Welcome to Web Market!";
 	%>
 	
 	<%
-	// java ÄÚµå (º¯¼ö, ¸Þ¼­µå ¼±¾ðµµ °¡´É)
+	// java ì½”ë“œ (ë³€ìˆ˜, ë©”ì„œë“œ ì„ ì–¸ë„ ê°€ëŠ¥)
 	// out.println("<h1>Hello World!!!!</h1>");
 	%>
 	
-	<!-- Áß°£´Ü -->
-	<!-- Bootstrap v.5ºÎÅÍ jumbotron Áö¿ø Áß´Ü -->
-	<!-- p-5 : »ç¹æÀ¸·Î ÀüÃ¼ ÆÐµù(5:¸¹ÀÌ, 3:º¸Åë) -->
-	<!-- bg-primary : ¹è°æ ±âº» »ö»ó -->
-	<!-- text-white : ±ÛÀÚ »ö»ó ÇÏ¾é°Ô -->
+	<!-- ì¤‘ê°„ë‹¨ -->
+	<!-- Bootstrap v.5ë¶€í„° jumbotron ì§€ì› ì¤‘ë‹¨ -->
+	<!-- p-5 : ì‚¬ë°©ìœ¼ë¡œ ì „ì²´ íŒ¨ë”©(5:ë§Žì´, 3:ë³´í†µ) -->
+	<!-- bg-primary : ë°°ê²½ ê¸°ë³¸ ìƒ‰ìƒ -->
+	<!-- text-white : ê¸€ìž ìƒ‰ìƒ í•˜ì–—ê²Œ -->
 	<div class="p-5 bg-primary text-white">
-		<!-- container : ÁÂ¿ì °¡¿îµ¥ Á¤·Ä -->
+		<!-- container : ì¢Œìš° ê°€ìš´ë° ì •ë ¬ -->
     	<div class="container">
-    		<!-- display-3 : Å« ±ÛÀÚ Áß ±ÛÀÚ Å©±â (3 : º¸Åë)-->
+    		<!-- display-3 : í° ê¸€ìž ì¤‘ ê¸€ìž í¬ê¸° (3 : ë³´í†µ)-->
        		<h1 class="display-3">
-       			<!-- Ç¥Çö¹® (Ãâ·Â)¿ë ½ºÆ®¸³Æ® ÅÂ±× -->
+       			<!-- í‘œí˜„ë¬¸ (ì¶œë ¥)ìš© ìŠ¤íŠ¸ë¦½íŠ¸ íƒœê·¸ -->
        			<%= greeting %>
        		</h1>
     	</div>
 	</div>
 	
 	
-	<!-- ÇÏ´Ü -->
-	<!-- container : ÁÂ¿ì Áß¾Ó Á¤·Ä -->
+	<!-- í•˜ë‹¨ -->
+	<!-- container : ì¢Œìš° ì¤‘ì•™ ì •ë ¬ -->
 	<div class="container">
-		<!-- text-center : ±ÛÀÚ Áß¾Ó Á¤·Ä -->
+		<!-- text-center : ê¸€ìž ì¤‘ì•™ ì •ë ¬ -->
     	<div class="text-center">
 	        <h3>
-	        	<!-- tagline º¯¼ö È£ÃâÇÏ¿© Ãâ·Â -->
+	        	<!-- tagline ë³€ìˆ˜ í˜¸ì¶œí•˜ì—¬ ì¶œë ¥ -->
 	        	<%= tagline %>
 	        </h3>
-	        <!-- ÇöÀç ½Ã°£ Ç¥½ÃÇÏ±â -->
+	        <!-- í˜„ìž¬ ì‹œê°„ í‘œì‹œí•˜ê¸° -->
 	        <%
-	        // ¿À´Ã ³¯Â¥ ºÒ·¯¿À±â (==> import ÇÊ¿ä)
+	        // ì˜¤ëŠ˜ ë‚ ì§œ ë¶ˆëŸ¬ì˜¤ê¸° (==> import í•„ìš”)
 	        Date today = new Date();
-	        // ½Ã°£ Ãâ·Â ¾à½Ä ÁöÁ¤ (½Ã½Ã:ºÐºÐ:ÃÊÃÊ am/pm) (==> import ÇÊ¿ä)
+	        // ì‹œê°„ ì¶œë ¥ ì•½ì‹ ì§€ì • (ì‹œì‹œ:ë¶„ë¶„:ì´ˆì´ˆ am/pm) (==> import í•„ìš”)
 	        SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss a");
-	        // Ãâ·ÂÇÏ±â
-	        out.println("ÇöÀç Á¢¼Ó ½Ã°£: "+ format.format(today));
+	        // ì¶œë ¥í•˜ê¸°
+	        out.println("í˜„ìž¬ ì ‘ì† ì‹œê°„: "+ format.format(today));
 	        %>
 	    </div>
 	</div>
 	
-	<!-- footer: ÇÏ´Ü¿¡ »ç¿ëÇÏ´Â div -->
+	<!-- footer: í•˜ë‹¨ì— ì‚¬ìš©í•˜ëŠ” div -->
 	<footer class="container">
-		<!-- &copy; ==> copyright ¹®±¸·Î Ãß°¡µÊ -->
+		<!-- &copy; ==> copyright ë¬¸êµ¬ë¡œ ì¶”ê°€ë¨ -->
 		<p>&copy; WebMarekt</p>
 	</footer>
 	
