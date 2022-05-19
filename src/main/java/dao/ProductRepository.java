@@ -34,15 +34,23 @@ public class ProductRepository {
 		tablet.setUnitInStock(1000);
 		tablet.setCondition("Old");
 		
-		// List에 데이터 추가
 		products.add(phone);
 		products.add(notebook);
 		products.add(tablet);
 	}
 	
-	// 기능 추가 : 모든 상품 정보 가져오기
 	public List<Product> getAllProducts() {
 		return products;
 		
 	}
+	
+	// ID로 상품 찾기 (stream : for문 대신 쓸 수 있는 신규 기능, for문은 책 p.173 참고)
+	public Product getProductById(String ProductId) {
+		return products.stream() // 상품 개 흘러감
+				.filter((product)->product.getProductId().equals(ProductId))
+				// 필요한 것 거르기 (filter가 하나씩 돌림)
+				.findFirst()	// 그 중 첫 번째 것 찾기
+				.get(); 		// 찾은 값 얻어오기	
+	}
+	
 }

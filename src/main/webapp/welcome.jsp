@@ -60,6 +60,8 @@
 	        </h3>
 	        <!-- 현재 시간 표시하기 -->
 	        <%
+	        // 1초에 한 번씩 새로고침 (시간 표시 부분)
+	        response.setIntHeader("Refresh", 1);
 	        // 오늘 날짜 불러오기 (==> import 필요)
 	        Date today = new Date();
 	        // 시간 출력 약식 지정 (시시:분분:초초 am/pm) (==> import 필요)
