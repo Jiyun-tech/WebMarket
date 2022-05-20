@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.Date" %> 			<!-- 사용할 Class import하기 -->
@@ -68,6 +70,14 @@
 	        SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss a");
 	        // 출력하기
 	        out.println("현재 접속 시간: "+ format.format(today));
+	        
+	        session.setAttribute("name", "오준석");
+	        session.setAttribute("age", 23);
+	        List<String> food = new ArrayList<String>();
+	        food.add("떡볶이");
+	        food.add("고구마");
+	        food.add("라면");
+	        session.setAttribute("foods",food);
 	        %>
 	    </div>
 	</div>

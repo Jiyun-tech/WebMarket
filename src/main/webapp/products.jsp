@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@page import="dao.ProductRepository"%>
 <%@ page import="java.util.List" %> 
 <!-- List 사용 위해 Class import -->
 <%@ page import="dto.Product" %>
 <!-- dto.Product Class List 메서드 import -->
 
-<jsp:useBean id="repository" class="dao.ProductRepository" scope="session"/>
+<!-- <jsp:useBean id="repository" class="dao.ProductRepository" scope="session"/> -->
 <%-- 자바빈즈 액션태그 ==> 
 	 클래스(dao.ProductsRepository)를 id(repository") 이름으로 끌고 와서 쓰겠다는 의미 --%>
 <%-- scope: 얼마만큼 살아있어야 하는지 범위를 지정.
@@ -46,10 +46,18 @@
 		</div>
 			
 		<%
+		
+		// session 활용 예시 (어디에서나 접근 가능한 서버 저장 데이터)
+		out.println(session.getAttribute("name"));
+		out.println(session.getAttribute("age"));
+		out.println(session.getAttribute("foods"));
+		
 		// useBeans 같은 기능 ==> ProductRepository repository = new ProductRepository();
 		// 단, 자바빈즈 액션 태그 사용하여 useBean 하지 않고 객체를 생성하게 되면, 
 		// 실행 시마다 메모리에 새로 객체를 만들게 되므로, 액션 태그사용하는(한 번 생성하고 재활용) 쪽이 효율적임.
-		List<Product> products = repository.getAllProducts();
+		// ==> 5/20) Singleton Pattern으로 변경		
+		ProductRepository repository22 = ProductRepository.getInstance();
+		List<Product> products = repository22.getAllProducts();
 		// *참고) 상품 정보 확인하기 위한 테스트 기능
 		// for(Product product: products) {
 			//out.println(product + "<br><br>");

@@ -10,7 +10,15 @@ public class ProductRepository {
 	// ArrayList는 List, Serializable 등 구현한 것이기 때문에, 부모 클래스인 List로 선언 가능.
 	// 참고: F3 키 사용하여 code 보기
 	
+	// Singleton Design Pattern 구현 (생성 관련 패턴)
+	// 하나의 객체를 생성 후 인스턴스를 재사용하는 싱글턴 패턴
+	private static ProductRepository instance = new ProductRepository();
+	public static ProductRepository getInstance() {
+		return instance;
+	}
+	
 	// 기본 생성자에 제품 3개 만들기
+	// 기본 생성자 다른 곳에서 생성하지 못하게 private으로 설정 (singleton pattern)
 	public ProductRepository() {
 		// DB에서 데이터 가져와야하나, 현재 database를 배우지 않아 데이터 3개 생성함.
 		Product phone = new Product("P1234", "iphone 6s", 800000);
@@ -51,6 +59,11 @@ public class ProductRepository {
 				// 필요한 것 거르기 (filter가 하나씩 돌림)
 				.findFirst()	// 그 중 첫 번째 것 찾기
 				.get(); 		// 찾은 값 얻어오기	
+	}
+	
+	// 상품 추가
+	public void addProduct(Product product) {
+		products.add(product);
 	}
 	
 }
