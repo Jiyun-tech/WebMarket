@@ -9,6 +9,8 @@
 	        	<a class="navbar-brand" href="./welcome.jsp">Home</a>
 	        	<!-- Products 클릭 시 연결될 url 지정 (products(상품 리스트) page)-->	        	
 	        	<a class="navbar-brand" href="./products.jsp">Products</a>
+	        	<!-- Products Add 클릭 시 연결될 url 지정 (addProduct(상품 추가 page)-->	  
+	        	<a class="navbar-brand" href="./addProduct.jsp">Add Product</a>
 	        </li>
 	    </ul>
 	</nav>

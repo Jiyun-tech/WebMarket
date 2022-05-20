@@ -1,12 +1,13 @@
 <!-- 상품 클릭 시, 상세 정보 페이지로 넘어가는 기능 구현 -->
+<%@page import="dao.ProductRepository"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
 <%@ page import="java.util.List" %> <!-- List 사용 위해 Class import -->
 <%@ page import="dto.Product" %>	<!-- dto.Product Class List 메서드 import -->
 
-<jsp:useBean id="repository" class="dao.ProductRepository" scope="session"/>
-<!-- JavaBeans 사용 위한 Action Tag -->
+<!-- <jsp:useBean id="repository" class="dao.ProductRepository" scope="session"/> -->
+<!-- JavaBeans 사용 위한 Action Tag ==> 삭제 및 singleton pattern으로 변경-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,7 +42,8 @@
 		// product.jsp?id=p1234 와 같은 식으로 넘어온 값 얻는 것!
 		String id = request.getParameter("id");
 		// getParameter 메서드는 무조건 String 형태로 받음
-		Product product = repository.getProductById(id);
+		ProductRepository repository2 = ProductRepository.getInstance();
+		Product product = repository2.getProductById(id);
 		%>
 		
 		<div class="container">

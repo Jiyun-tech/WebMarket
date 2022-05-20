@@ -1,3 +1,5 @@
+<!-- 상품 등록 페이지 (정보 입력)-->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -26,48 +28,68 @@
     	</div>
 	</div>
 		
-	<div class="container">
+	<div class="container"> <!-- container 열기 -->
     	<form name="newProduct" action="./processAddProduct.jsp" class="form-horizontal" method="post">
     	<!-- method : get 방식으로 받으면 받은 내용이 user에게 모두 보임. post로 방식으로 넘겨야 보이지 않음! -->
-	        <div class="form-group row ">
-	            <label class="co-sm-2">상품 코드</label>
+	        <div class="form-group row mt-3">
+	            <label class="col-sm-2">상품 코드</label>
 	            <div class="col-sm-3">
 	                <input type="text" name="productId" class="form-control">
 	            </div>
 	        </div>
 	        
-	        <div class="form-group row">
-	            <label class="co-sm-2">상품명</label>
+	        <div class="form-group row mt-3">
+	            <label class="col-sm-2">상품명</label>
 	            <div class="col-sm-3">
 	                <input type="text" name="name" class="form-control">
 	            </div>
 	        </div>
 	        
-	        <div class="form-group row">
-	            <label class="co-sm-2">가격</label>
+	        <div class="form-group row mt-3">
+	            <label class="col-sm-2">가격</label>
 	            <div class="col-sm-3">
 	                <input type="text" name="unitPrice" class="form-control">
 	            </div>
 	        </div>
 
-	        <div class="form-group row">
-	            <label class="co-sm-2">상세 정보</label>
-	            <div class="col-sm-3">
+			<!-- 저장 X : 상세 정보, 제조사, 분류 -->
+	        <div class="form-group row mt-3">
+	            <label class="col-sm-2">상세 정보</label>
+	            <div class="col-sm-5">
 	                <input type="text" name="description" class="form-control">          
 	            </div>
 	        </div>
 	        
-	        <div class="form-group row">
-	            <label class="co-sm-2">제조사</label>
+	        <!-- 저장 X : 상세 정보, 제조사, 분류 -->
+	        <div class="form-group row mt-3">
+	            <label class="col-sm-2">제조사</label>
 	            <div class="col-sm-3">
 	                <input type="text" name="manufacturer" class="form-control">          
 	            </div>
 	        </div>
 	        
-	        <div class="form-group row">
-	            <label class="co-sm-2">분류</label>
+	        <!-- 저장 X : 상세 정보, 제조사, 분류 -->
+	        <div class="form-group row mt-3">
+	            <label class="col-sm-2">분류</label>
 	            <div class="col-sm-3">
 	                <input type="text" name="category" class="form-control">          
+	            </div>
+	        </div>
+	           
+	        <div class="form-group row mt-3">
+	            <label class="col-sm-2">재고 수</label>
+	            <div class="col-sm-3">
+	                <input type="text" name="unitInStock" class="form-control">          
+	            </div>
+	        </div>
+	        
+	        	        
+	        <div class="form-group row mt-3">
+	            <label class="col-sm-2">상태</label>
+	            <div class="col-sm-3">
+	                <input type="radio" name="condition" value="New">신규 제품
+	                <input type="radio" name="condition" value="Old">중고 제품	                
+	                <input type="radio" name="condition" value="Refurbished">재생 제품	                
 	            </div>
 	        </div>
 	        
@@ -81,6 +103,7 @@
 			<br>
 
 	    </form>
+	 </div> <!-- container 닫기 -->
 	
 	
 	<!-- footer(하단) 부분 jsp action tag로 연결  -->

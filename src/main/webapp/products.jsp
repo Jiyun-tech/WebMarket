@@ -49,15 +49,15 @@
 		
 		// session 활용 예시 (어디에서나 접근 가능한 서버 저장 데이터)
 		out.println(session.getAttribute("name"));
-		out.println(session.getAttribute("age"));
-		out.println(session.getAttribute("foods"));
+		out.println(session.getAttribute("since"));
+		out.println(session.getAttribute("category"));
 		
 		// useBeans 같은 기능 ==> ProductRepository repository = new ProductRepository();
 		// 단, 자바빈즈 액션 태그 사용하여 useBean 하지 않고 객체를 생성하게 되면, 
 		// 실행 시마다 메모리에 새로 객체를 만들게 되므로, 액션 태그사용하는(한 번 생성하고 재활용) 쪽이 효율적임.
 		// ==> 5/20) Singleton Pattern으로 변경		
-		ProductRepository repository22 = ProductRepository.getInstance();
-		List<Product> products = repository22.getAllProducts();
+		ProductRepository repository2 = ProductRepository.getInstance();
+		List<Product> products = repository2.getAllProducts();
 		// *참고) 상품 정보 확인하기 위한 테스트 기능
 		// for(Product product: products) {
 			//out.println(product + "<br><br>");

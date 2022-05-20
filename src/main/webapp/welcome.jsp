@@ -71,13 +71,16 @@
 	        // 출력하기
 	        out.println("현재 접속 시간: "+ format.format(today));
 	        
-	        session.setAttribute("name", "오준석");
-	        session.setAttribute("age", 23);
-	        List<String> food = new ArrayList<String>();
-	        food.add("떡볶이");
-	        food.add("고구마");
-	        food.add("라면");
-	        session.setAttribute("foods",food);
+	        // session (서버 저장 데이터) 객체 생성 및 값 저장
+	        session.setAttribute("name", "우리 쇼핑몰");
+	        session.setAttribute("since", 2022);
+	        
+	        List<String> items = new ArrayList<>();
+	        items.add("휴대폰");
+	        items.add("노트북");
+	        items.add("태블릭");
+	        session.setAttribute("category",items);
+
 	        %>
 	    </div>
 	</div>

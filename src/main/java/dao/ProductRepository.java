@@ -23,22 +23,22 @@ public class ProductRepository {
 		// DB에서 데이터 가져와야하나, 현재 database를 배우지 않아 데이터 3개 생성함.
 		Product phone = new Product("P1234", "iphone 6s", 800000);
 		phone.setDescription("4.7-inch, 1334X750 Retina HD display, 8-megapixel iSight Camara");
-		phone.setCategory("Smart Phone");
 		phone.setManufacturer("Apple");
+		phone.setCategory("Smart Phone");
 		phone.setUnitInStock(1000);
 		phone.setCondition("New");
 		
 		Product notebook = new Product("P1235", "LG PC 그램", 1500000);
 		notebook.setDescription("13.3inch, IPS LED display, 5th Generation Intel Core processors");
-		notebook.setCategory("Notebook");
 		notebook.setManufacturer("LG");
+		notebook.setCategory("Notebook");
 		notebook.setUnitInStock(1000);
 		notebook.setCondition("Refurbished");
 		
 		Product tablet = new Product("P1236", "Galaxy Tab S", 900000);
 		tablet.setDescription("212.8*125.6*6.6mm, Super AMOLED display, Octa-Core processor");
-		tablet.setCategory("Tablet");
 		tablet.setManufacturer("Samsung");
+		tablet.setCategory("Tablet");
 		tablet.setUnitInStock(1000);
 		tablet.setCondition("Old");
 		
