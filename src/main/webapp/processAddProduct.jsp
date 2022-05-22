@@ -30,10 +30,10 @@
 	int unitInStock = Integer.parseInt(request.getParameter("unitInStock"));
 	String condition =  request.getParameter("condition");
 	
-	// get Images
-	Enumeration files = multi.getFileNames();
-	String fname = (String)files.nextElement();
-	String fileName = multi.getFilesystemName(fname);
+	// get Images - error!
+	// Enumeration files = multi.getFileNames();
+	// String fname = (String)files.nextElement();
+	// String fileName = multi.getFilesystemName(fname);
 	
 	// 참고 : ctrl + space ==> 자동완성
 	// Generatge new producte with the input information

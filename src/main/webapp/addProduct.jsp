@@ -1,5 +1,4 @@
 <!-- 상품 등록 페이지 (정보 입력)-->
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -53,7 +52,6 @@
 	            </div>
 	        </div>
 
-	        <!-- 저장 X : 상세 정보, 제조사, 분류, 재고 수 -->
 	        <div class="form-group row mt-3">
 	            <label class="col-sm-2">상세 정보</label>
 	            <div class="col-sm-5">
@@ -61,7 +59,6 @@
 	            </div>
 	        </div>
 	        
-	        <!-- 저장 X : 상세 정보, 제조사, 분류, 재고 수 -->
 	        <div class="form-group row mt-3">
 	            <label class="col-sm-2">제조사</label>
 	            <div class="col-sm-3">
@@ -69,7 +66,6 @@
 	            </div>
 	        </div>
 	        
-	        <!-- 저장 X : 상세 정보, 제조사, 분류, 재고 수 -->
 	        <div class="form-group row mt-3">
 	            <label class="col-sm-2">분류</label>
 	            <div class="col-sm-3">
@@ -77,14 +73,12 @@
 	            </div>
 	        </div>
 	           
-	        <!-- 저장 X : 상세 정보, 제조사, 분류, 재고 수 -->
 	        <div class="form-group row mt-3">
 	            <label class="col-sm-2">재고 수</label>
 	            <div class="col-sm-3">
 	                <input type="text" name="unitInStock" class="form-control">          
 	            </div>
-	        </div>
-	        
+	        </div>      
 	        	        
 	        <div class="form-group row mt-3">
 	            <label class="col-sm-2">상태</label>
