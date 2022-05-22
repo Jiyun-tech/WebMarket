@@ -16,8 +16,19 @@
 	String condition =  request.getParameter("condition");
 	
 	// 참고 : ctrl + space ==> 자동완성
+	// Generatge new producte with the input information
 	Product newProduct = new Product(productId, name, unitPrice);
+	newProduct.setProductId(productId);
+	newProduct.setName(name);
+	newProduct.setUnitPrice(unitPrice);
+	newProduct.setDescription(description);
+	newProduct.setManufacturer(manufacturer);
+	newProduct.setCategory(category);
+	newProduct.setUnitInStock(unitInStock);
+	newProduct.setCondition(condition);
 	
+	
+	// Singleton Pattern
 	ProductRepository repository = ProductRepository.getInstance();
 	repository.addProduct(newProduct);
 	
