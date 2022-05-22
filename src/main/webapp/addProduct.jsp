@@ -29,7 +29,8 @@
 	</div>
 		
 	<div class="container"> <!-- container 열기 -->
-    	<form name="newProduct" action="./processAddProduct.jsp" class="form-horizontal" method="post">
+    	<form name="newProduct" action="./processAddProduct.jsp" class="form-horizontal" 
+    	method="post" enctype="multipart/form-data">
     	<!-- method : get 방식으로 받으면 받은 내용이 user에게 모두 보임. post로 방식으로 넘겨야 보이지 않음! -->
 	        <div class="form-group row mt-3">
 	            <label class="col-sm-2">상품 코드</label>
@@ -91,6 +92,14 @@
 	                <input type="radio" name="condition" value="New">신규 제품
 	                <input type="radio" name="condition" value="Old">중고 제품	                
 	                <input type="radio" name="condition" value="Refurbished">재생 제품	                
+	            </div>
+	        </div>
+	        
+	        <!-- image upload part-->
+	        <div class="form-group row mt-3">
+	            <label class="col-sm-2">이미지</label>
+	            <div class="col-sm-3">
+	                <input type="file" name="productImage" class="form-control">             
 	            </div>
 	        </div>
 	        

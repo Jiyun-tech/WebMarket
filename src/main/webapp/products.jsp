@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="dao.ProductRepository"%>
 <%@ page import="java.util.List" %> 
 <!-- List 사용 위해 Class import -->
 <%@ page import="dto.Product" %>
 <!-- dto.Product Class List 메서드 import -->
+<%@page import="dao.ProductRepository"%>
 
 <!-- <jsp:useBean id="repository" class="dao.ProductRepository" scope="session"/> -->
 <%-- 자바빈즈 액션태그 ==> 
@@ -76,6 +76,8 @@
    			    	<!-- md : medium size device -->
    			    	<!-- ProductRepository.java 클래스에 있는 정보 불러오기 -->
    			  		<div class="col-md-4">
+   			  			<!-- product image upload -->
+   			  			<img src="WebMarket/WebContent/images/<%= product.getFileName()%>" style="width: 100%">
    			  			<h3><%= product.getName()%></h3>
    			  			<p><%= product.getDescription()%></p>
    			  			<p><%= product.getUnitPrice()%>원</p>

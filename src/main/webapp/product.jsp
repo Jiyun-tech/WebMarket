@@ -16,6 +16,16 @@
 	<!-- Bootstrap CDS 가져오기 (2가지) ==> 참고 : w3school.com -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Function added - shopping cart -->
+	<script type="text/javascript">
+		function addToCart() {
+			if (confirm("상품을 장바구니에 추가하시겠습니까?")) {
+				document.addForm.submit();
+			} else {
+				document.addForm.reset();
+			}
+		}
+	</script>
 </head>
 <body>
 	
@@ -50,7 +60,10 @@
 			<!-- 글자 가운데 정렬 -->
 		    <div class="row">
    			  		<div class="col-md-4">
+   			  			<!-- product image added -->
+		  		   		<img src="WebMarket/WebContent/images/<%= product.getFileName()%>" style="width: 100%">
    			  			<h3><%= product.getName()%></h3>
+   			  			<h4><%= product.getUnitPrice()%>원</h4>
    			  			<p><%= product.getDescription()%></p>
    			  			<p> <b>상품 코드</b> : <%=product.getProductId()%></p>	
    			  			<p> <b>제조사</b> : <%=product.getManufacturer()%></p>
@@ -58,10 +71,15 @@
    			  			<p> <b>재고 수</b> : <%=product.getUnitInStock() %></p>
    			  			
    			  			<p>
+   			  				<!-- shopping cart -->
+   			  				<form name="addFrom" action="./addCart.jsp?id=<%= product.getProductId()%>" method="reset">
    			  				<a href="#" class="btn btn-info"> 상품 주문 &raquo;</a>
 							<!-- 상품 주문 버튼 추가 // # : 현재 페이지를 의미함!-->
+							<a href="./cart.jsp" class="btn btn-warning"> 장바구니 &raquo;</a>
+							<!-- 장바구니 버튼 추가 -->
 							<a href="./products.jsp" class="btn btn-secondary"> 상품 목록 &raquo;</a>
 							<!-- 상품 목록 버튼 추가 -->
+							</form>
 						</p>
 
    			  		</div> 

@@ -18,8 +18,10 @@ public class Product implements Serializable {
 	private String description;
 	private String manufacturer;
 	private String category;
-	private long unitInStock;
+	private int unitInStock;
 	private String condition;
+	private String filename; 	// filename for image upload
+	private int quantity; 		// quantity of product in shopping cart 
 	
 	Product() {}	// 기본 생성자 만들어놓기 (다른 생성자 생성하므로, 기본 생성자 만들어야 함)
 				 	// 5/19 수업분 까지는 아직 없어도 괜찮음! 5/20에 꼭 필요한 이유와 상황 배울 예정.
@@ -71,10 +73,10 @@ public class Product implements Serializable {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public long getUnitInStock() {
+	public int getUnitInStock() {
 		return unitInStock;
 	}
-	public void setUnitInStock(long unitInStock) {
+	public void setUnitInStock(int unitInStock) {
 		this.unitInStock = unitInStock;
 	}
 	public String getCondition() {
@@ -93,6 +95,22 @@ public class Product implements Serializable {
 				+ unitInStock + ", condition=" + condition + "]";
 	}
 	
+	// Upload the product image
+	public String getFileName() {
+		return filename;
+	}
+	
+	public void setFileName(String filename) {
+		this.filename = filename;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 	
 	
 }
