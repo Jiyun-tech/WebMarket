@@ -67,7 +67,6 @@
   	
     <div class="todo-list-template">
       <div class="title">오늘 할 일</div>
-
       <section class="form-wrapper">
         <div class="form">
           <input name="text" id="text" />
@@ -75,7 +74,6 @@
         </div>
       </section>
      
-
       <section class="todos-wrapper">
       	<!-- 입력한 내용 받아서 To do List 창으로 가져오기 -->
       	<%
@@ -96,9 +94,7 @@
       	<%
       	}
       	%>
-
       </section>
     </div>
   </body>
-
   </html>
