@@ -31,5 +31,26 @@ public class TodoRepository {
 		todos.add(todo);
 	}
 	
+	// 상태 바꾸기 기능 (완료 여부 체크 시, 상태 변경)
+	public void toggle(long id) {
+		for (Todo todo : todos) {
+			if (todo.getId() == id) {
+				todo.setDone(!todo.isDone());
+				break;
+			}
+		}
+	}
+	
+	// 할 일 지우기 기능
+	public void remove(long id) {
+		Todo removeTodo = null;
+		for (Todo todo : todos) {
+			if (todo.getId() == id) {
+				removeTodo = todo;
+				break;
+			}
+		}
+		todos.remove(removeTodo);
+	}
 	
 }
