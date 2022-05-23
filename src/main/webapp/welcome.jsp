@@ -1,6 +1,6 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.Date" %> 			<!-- 사용할 Class import하기 -->
 <%@ page import="java.text.SimpleDateFormat" %> <!-- 사용할 Class import하기 -->

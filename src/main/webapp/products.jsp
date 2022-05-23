@@ -4,7 +4,9 @@
 <!-- List 사용 위해 Class import -->
 <%@ page import="dto.Product" %>
 <!-- dto.Product Class List 메서드 import -->
-<%@page import="dao.ProductRepository"%>
+<%@ page import="dao.ProductRepository"%>
+<!-- JSTL 사용하기 (after jstl.jar download) -->
+<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> -->
 
 <!-- <jsp:useBean id="repository" class="dao.ProductRepository" scope="session"/> -->
 <%-- 자바빈즈 액션태그 ==> 
@@ -97,6 +99,8 @@
 				
 		<!-- footer(하단) action tag로 연결-->
 		<jsp:include page="footer.jsp"/>
+		
+		<!-- <c:out value="Hello World"/> -->
 	
 	</body>
 </html>
