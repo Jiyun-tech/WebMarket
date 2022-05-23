@@ -1,4 +1,4 @@
-// 비즈니스 로직을 한 개 클래스에 모두 몰아 넣기 (참고 : 교재 ch18 MVC)
+// 비즈니스 로직 처리/조정하는 기능을 한 개 클래스에 모두 몰아 넣기 (참고 : 교재 ch18 MVC)
 // MVC 2 : 로직을 모두 Java Code로 짜는 것
 package controller;
 
@@ -16,6 +16,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet(name = "TodoController", 
 			urlPatterns = {"/addTodo.do", "/toggleTodo.do", "/removeTodo.do"})
 
+// 서블릿 클래스 생성하기 (HttpServlet 클래스 확장)
 public class TodoController extends HttpServlet {
 
 	private static final long serialVersionUID = -5789298759459019056L;
@@ -49,7 +50,8 @@ public class TodoController extends HttpServlet {
 		// session에 저장
 		// req.getSession().setAttribute("todos", repository.getTodos());		
 		
-		// 리다이렉트 하면서 주소창에 노출하지 않음
+		// 페이지 이동하기
+		// 리다이렉트 하면서 주소창에 노출하지 않고 처음 요청된 url 유지 (포워딩 방식)
 		req.getRequestDispatcher("todolist.jsp").forward(req, resp);
 	}
 }
