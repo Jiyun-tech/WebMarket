@@ -18,7 +18,7 @@
     <script>
       function setDone(id) {
     	  $.ajax({
-    		  url: "processToggleTodo.jsp",
+    		  url: "toggleTodo.do",
     		  type: "post",
     		  data: { "id": id},
     	  	  // 통신이 끝나면 새로고침 한 번씩 해주기 (입력 시마다 reload됨)
@@ -34,7 +34,7 @@
     	  // jQuery 방식으로 데이터 넘기기
     	  let task = $("#text").val();
     	  $.ajax({
-    		  url: "processAddTodo.jsp",
+    		  url: "addTodo.do",
     		  type: "post",
     		  data: { "task": task},
     	  	  // 통신이 끝나면 새로고침 한 번씩 해주기 (입력 시마다 reload됨)
@@ -46,7 +46,7 @@
 
       function remove(id) {
     	  $.ajax({
-    		  url: "processRemoveTodo.jsp",
+    		  url: "removeTodo.do",
     		  type: "post",
     		  data: { "id": id},
     	  	  // 통신이 끝나면 새로고침 한 번씩 해주기 (입력 시마다 reload됨)
@@ -59,10 +59,12 @@
     </script>
   </head>
 
+  <body>
   	<%
     TodoRepository repository = TodoRepository.getInstance();
     List<Todo> todos = repository.getTodos();
   	%>
+  	
     <div class="todo-list-template">
       <div class="title">오늘 할 일</div>
 
@@ -81,18 +83,15 @@
       	%>
 		    <div class="todo-item" onclick="setDone(<%= todo.getId()%>)">
 	        	<div class="remove" onclick="remove(<%= todo.getId()%>)">&times;</div>
-	        	<div class="todo-text <%= todo.isDone() ? "checked" : "" %>"> <%= todo.getTask() %> </div>
-	        	
+	        	<div class="todo-text <%= todo.isDone() ? "checked" : "" %>"> <%= todo.getTask() %> </div>	
 	        	<!-- 체크 마크 추가 (조건에 따라)-->
 	        	<%
 	        	if (todo.isDone()) {
 	        	%>
-	        		<div class="check-mark">&#x2713;</div>
-	        	
+	        		<div class="check-mark">&#x2713;</div>     	
 	        	<%
 	        	}
 	        	%>
-	        	
 	        </div>
       	<%
       	}
